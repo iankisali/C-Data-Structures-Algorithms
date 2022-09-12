@@ -28,3 +28,9 @@ Linked list is a data structure that links each node to the next node. It can be
 - Need for constant time for insertion and deletion.
 - Do not access random elements from Linked list.
 - Insert element in any position of list.
+
+### 2. Doubly Linked List
+Doubly linked list is a data structure in which each node contains data and two links. One link points to the previous node and another link point to the next node. It can be used because of following reasons :
+- Easier to delete node
+- Can be iterated in reverse order without recursion implmentation
+- Insertion or removal is fast
