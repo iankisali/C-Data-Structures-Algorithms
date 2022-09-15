@@ -59,3 +59,45 @@ We have used `typedef` to define a new data type. This data type can be used to 
 
 We will create a simple linked list with three nodes containing different integers :
  
+ ## Inserting a node
+ We now have a linked list with three integers. We can insert a new node in the linked list in three ways :
+ - At front of linked list
+ - After given node
+ - At end of linked list.
+ 
+ ### **1. Inserting node at front**
+ When a new node is added before the head of a given Linked List, it becomes the new head node of the list. Example if the Linked List is 2->4->6 and we want to add 5 at the front, the list becomes 5->2->4->6. Let us call the function insertHead(). The function must receive a pointer to head pointer since it changes the head pointer to point to new node.
+
+  ![Insert_head](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2013/03/Linkedlist_insert_at_start.png)
+
+  #### Complexity Analysis
+  - **Time Complexity** : O(1), we have a pointer to head and can directly add a node and change pointer. So time complexity of inserting node at head is O(1) as it does constant amount of time.
+  - **Auxillary Space** : O(1).
+
+
+  ### **2. Inserting node at nth position**
+  We are given pointer to a node, and new node is inserted after given node.
+  Steps include :
+  - Check if previous node is NULL or not.
+  - Allocate new node and assign data to new node
+  - Make next of new node as next of previous node
+  - Move next of previous node as new node.
+
+  ![Insert_nth](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2013/03/Linkedlist_insert_middle.png)
+
+  #### Complexity Analysis
+  **Time Complexity** : O(N), where N is size of linked list.
+  **Auxiliary Space** : O(1) since using constant space to modify pointers.
+
+   ### **3. Inserting node at end**
+   New node is always added after last node. Since a Linked List is typically represented by head we have to traverse till end then change next to last node to a new node.
+
+   ![insert_end](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2013/03/Linkedlist_insert_last.png)
+
+   #### Complexity Analysis
+  **Time Complexity** : O(N), where N is number of nodes in linked list. Since there is loop frim head to end, function O(n) work.
+
+        The method can be optimized to work in O(1) by keeping extra pointer to tail of linked list.
+        
+  **Auxiliary Space** : O(1)
+
