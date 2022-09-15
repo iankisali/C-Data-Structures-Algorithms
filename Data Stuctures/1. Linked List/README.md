@@ -86,8 +86,9 @@ We will create a simple linked list with three nodes containing different intege
   ![Insert_nth](https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2013/03/Linkedlist_insert_middle.png)
 
   #### Complexity Analysis
-  **Time Complexity** : O(N), where N is size of linked list.
-  **Auxiliary Space** : O(1) since using constant space to modify pointers.
+  - **Time Complexity** : O(N), where N is size of linked list.
+  
+  - **Auxiliary Space** : O(1) since using constant space to modify pointers.
 
    ### **3. Inserting node at end**
    New node is always added after last node. Since a Linked List is typically represented by head we have to traverse till end then change next to last node to a new node.
@@ -98,6 +99,6 @@ We will create a simple linked list with three nodes containing different intege
   **Time Complexity** : O(N), where N is number of nodes in linked list. Since there is loop frim head to end, function O(n) work.
 
         The method can be optimized to work in O(1) by keeping extra pointer to tail of linked list.
-        
+
   **Auxiliary Space** : O(1)
 
