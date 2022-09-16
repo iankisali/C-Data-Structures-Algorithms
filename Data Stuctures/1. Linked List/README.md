@@ -59,6 +59,12 @@ We have used `typedef` to define a new data type. This data type can be used to 
 
 We will create a simple linked list with three nodes containing different integers :
  
+ ## header.h
+
+
+ ## Printing a list
+
+ 
  ## Inserting a node
  We now have a linked list with three integers. We can insert a new node in the linked list in three ways :
  - At front of linked list
@@ -87,7 +93,7 @@ We will create a simple linked list with three nodes containing different intege
 
   #### Complexity Analysis
   - **Time Complexity** : O(N), where N is size of linked list.
-  
+
   - **Auxiliary Space** : O(1) since using constant space to modify pointers.
 
    ### **3. Inserting node at end**
@@ -102,3 +108,7 @@ We will create a simple linked list with three nodes containing different intege
 
   **Auxiliary Space** : O(1)
 
+
+## Deleting a node
+We can delete a node in a Linked List either from beginning, end or the middle.
+  
