@@ -91,5 +91,39 @@ int main()
 
         insertEnd(&head, 9);
         printList(head);
+
+        printf("\n Reversing the linked list using iterative approach becomes : ");
+        reverseIterative(&head);
+        printList(head);
+
+        printf("\n Deleting the end : ");
+        deleteEnd(&head);
+        printList(head);
+
+        printf("\n Reversing linked list using tail recursive approach : ");
+        reverseTailRec(&head);
+        printList(head);
+
+
+        printf("\n Deleting the head : ");
+        deleteHead(&head);
+        printList(head);
+
+      printf("\n Deleting at position 2 ");
+      deleteUser(&head, 2);
+      printf(" The list becomes : ");
+      printList(head);
+
+      printf("\n Reversing linked list using head recursive approach : ");
+      reverseHeadRec(&head);
+      printList(head);
+
+      //I have commented out the deleteList since i dont want do delete my list at the moment
+      /*
+      printf("\n Deleting whole list : ");
+      deleteList(&head);
+      printList(head);
+      */
+
         return 0;
 }
