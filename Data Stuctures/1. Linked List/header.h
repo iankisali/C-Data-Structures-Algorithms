@@ -18,5 +18,10 @@ void deleteHead(struct Node** head);
 void deleteList(struct Node** head);
 void deleteEnd(struct Node** head);
 void deleteUser(struct Node** head, int position);
+void reverseIterative(struct Node** head);
+void reverseTail(struct Node* current, struct Node* previous, struct Node** head);
+void reverseTailRec(struct Node** head);
+void reverseHead(struct Node* current, struct Node* previous, struct Node** head);
+void reverseHeadRec(struct Node** head);
 
 #endif 
