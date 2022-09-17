@@ -1,4 +1,6 @@
-# What is a Linked List? 
+# Table of Contents
+
+## What is a Linked List? 
 
 A Linked List is a sequence of data structures, which are connected together via links i.e sequence of links which contains items. They include a series of connected nodes and each node stores the following :
 - data item (i.e integer, strings etc)
@@ -59,12 +61,28 @@ We have used `typedef` to define a new data type. This data type can be used to 
 
 We will create a simple linked list with three nodes containing different integers :
  
+ ---
+
  ## header.h
+**`header.h`** file contains function declaration and macro definitions to be shared with various source files. At the source files the header file is included using the preprocessing directive `#include "header.h"`. The construct of the header file is a **wrapper *`#ifndef`*** and this is the format used :
 
+```
+#ifndef _HEADER_
+#define _HEADER_
 
+The entire header file
+
+#endif
+```
+---
  ## Printing a list
+**`printList.c`** file contains code to print a Linked List. It print the data in the first node and updates the value to the next node. The loop ends when the data is NULL.
 
+### Visual Representation of printing Linked List
+![Print_LList](https://www.log2base2.com/images/ds/print-linked-list.png)
  
+ ---
+
  ## Inserting a node
  We now have a linked list with three integers. We can insert a new node in the linked list in three ways :
  - At front of linked list
@@ -108,7 +126,36 @@ We will create a simple linked list with three nodes containing different intege
 
   **Auxiliary Space** : O(1)
 
-
+---
 ## Deleting a node
-We can delete a node in a Linked List either from beginning, end or the middle.
-  
+**`delete.c`** contains code for deletion of a node from a Linked List from the beginning(head), end, whole list and deleting from any position.
+
+### Deleting from Beginning
+We will create a variable to store original head value and make the next node to be equal to head. We then free the unused memory of the variable created.
+ 
+### Deleting from End
+We create a variable that is equal to head of Linked List and then loop through while updating the value of temporary variable. We then make the last node value equal to NULL. This will delete the value of last node.
+
+### Deleting whole List
+This are steps used to delete whole Linked List :
+1. Create temp variable to store head value.
+2. Introduce a loop and make next node equal to the temp variable
+3. Free the temporary value
+4. Make value of head equal to temp value
+
+### Deleting from any positiom
+
+
+---
+
+## Reversing Linked List
+**`reverse.c`** contains code to reverse a Linked List using three methods :
+- Iterative method
+- Tail Recursive Approach
+- Head Recursive Approach
+
+### Iterative Method
+
+### Tail Recursive Method
+
+### Head Recursive Method
