@@ -1,14 +1,14 @@
 #include "header.h"
 
 /*Function to print Linked List*/
-void printList(struct Node* n)
+void printList(struct Node* temp)
 {
   //as long as list is not NULL
-  while (n != NULL)
+  while (temp != NULL)
   {
     //print the data of the node
-    printf(" %d ", n->data);
+    printf(" %d ", temp->data);
     //update to the next data in node
-    n = n->next;
+    temp = temp->next;
   }
 }
