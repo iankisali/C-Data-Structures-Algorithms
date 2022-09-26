@@ -55,30 +55,40 @@ void deleteList(struct Node** head)
 }
 
 /*This is a function to delete at a position specified by user*/
-
+/*function takes two parameters i.e head value and position to delete*/ 
 void deleteUser(struct Node** head, int position)
 {
+    //making head value equal to temp
     struct Node* temp = *head;
 
     int num;
+    /*if element to be deleted is head*/
     if (position == 0)
     {
         printf("\n Element deleted is : %d\n",temp->data);
+        /*make the next value to be head*/
         *head = (*head)->next;
+        /*make temp head value equal none*/
         temp->next = NULL;
+        /*free unused memory temp*/
         free(temp);
     }
-    else 
+    else
     {
         for(num = 0; num < position - 1; num++)
         {
+            /*temp pointer points to previous node of node to be deleted*/
             temp = temp->next;
         }
+        /*creating delete variable make it equal previous value to be deleted*/
         struct Node* delete = temp->next;
 
+        /*delete will now be equal to node to be deleted*/
         temp->next = temp->next->next;
         printf(" and element deleted is : %d\n", delete->data);
+        /*make value equal 0*/
         delete->next = NULL;
+        /*free memory*/
         free(delete);
     }
     
