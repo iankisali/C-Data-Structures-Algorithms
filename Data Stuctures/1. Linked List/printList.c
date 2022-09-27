@@ -12,3 +12,16 @@ void printList(struct Node* temp)
     temp = temp->next;
   }
 }
+
+/*printing linked list in reverse using recursion*/
+void printReverse(struct Node* head)
+{
+  //base case is when value equal NULL
+  if (head == NULL)
+  {
+    return;
+  }
+  //recursive call
+  printReverse(head->next);
+  printf(" %d ", head->data);
+}
