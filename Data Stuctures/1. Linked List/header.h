@@ -11,6 +11,7 @@ struct Node
 };
 
 void printList(struct Node* temp);
+void printReverse(struct Node* head);
 void insertHead(struct Node** head_ref, int new_data);
 void insertAfter(struct Node* prev_node, int new_data);
 void insertEnd(struct Node**, int new_data);
@@ -19,9 +20,11 @@ void deleteList(struct Node** head);
 void deleteEnd(struct Node** head);
 void deleteUser(struct Node** head, int position);
 void reverseIterative(struct Node** head);
+void reverseRecursively(struct Node** head);
 void reverseTail(struct Node* current, struct Node* previous, struct Node** head);
 void reverseTailRec(struct Node** head);
 void reverseHead(struct Node* current, struct Node* previous, struct Node** head);
 void reverseHeadRec(struct Node** head);
+
 
 #endif 
