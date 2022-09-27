@@ -63,7 +63,7 @@ We will create a simple linked list with three nodes containing different intege
  
  ---
 
- ## header.h
+ ## Header File
 **`header.h`** file contains function declaration and macro definitions to be shared with various source files. At the source files the header file is included using the preprocessing directive `#include "header.h"`. The construct of the header file is a **wrapper *`#ifndef`*** and this is the format used :
 
 ```
@@ -143,8 +143,20 @@ This are steps used to delete whole Linked List :
 3. Free the temporary value
 4. Make value of head equal to temp value
 
-### Deleting from any positiom
+- **Time Complexity:** O(n)
+- **Auxiliary Space:** O(1)
 
+### Deleting from any positiom
+This function takes two parameters i.e pointer to head and position to be deleted. 
+1. First, create a temp variable pointing to head
+2. If position to be deleted is 0 it prints the value and advances the head pointer to next value.
+3. To delete at specific position, temp point to previous node of node to be deleted.
+4. Delete pointer point to node to be deleted i.e by using `temp->next->next`
+5. Remember to free the node
+
+- **Best Case:** O(1) if given position is 1
+- **Average & Worst Case:** O(N) if position given is size - 1 then need to traverse till position not found
+- **Space Complexity:** O(1) no extra space required
 
 ---
 
@@ -154,8 +166,25 @@ This are steps used to delete whole Linked List :
 - Tail Recursive Approach
 - Head Recursive Approach
 
-### Iterative Method
+### Iterative 
+1. Initializing 3 pointers. previous and next as NULL, current as head
+2. Iterate through linked list. In loop do following:
+  - store next node as next i.e `next = current->next`
+  - change next of current. Reversing happens i.e `current->next=prev`
+  - move previous and current one step forward
+    -`previous = current` & `current->next`
+3. Outside loop make head value as previous
+
+Visual representation is as shown:
+![Reversing Iteratively](https://media.geeksforgeeks.org/wp-content/cdn-uploads/RGIF2.gif) 
+
+- **Time Complexity:** O(n)
+- **Auxiliary Space:** O(1)
 
 ### Tail Recursive Method
+The `reverseTail` function takes three parameters i.e current, previous and head. The if statement marks the last node as head and updates the next to previous node. Outside if statement, the next struct is saved for recursive call and the next is updated. 
 
-### Head Recursive Method
+In the `reverseTailRec` function it calls the `reverseTail` with the three parameters as (*head, NULL, head) i.e current as pointer to head, previous passed NULL, and head value
+
+- **Time Complexity:**: O(N) We do certain operation for every node of linked list
+- **Auxiliary Space:** O(1) Constant space used
