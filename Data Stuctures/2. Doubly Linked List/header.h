@@ -19,5 +19,7 @@ void insertEnd(struct Node** head, int newData);
 void deleteHead(struct Node** head);
 void deleteUser(struct Node** head, int position);
 void deleteEnd(struct Node** head);
+void deleteUserInput(struct Node** head);
+void reverseDLL(struct Node** head);
 
 #endif 
