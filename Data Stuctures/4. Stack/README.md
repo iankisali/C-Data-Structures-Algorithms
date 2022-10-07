@@ -5,10 +5,9 @@ You can take a pile of plates kept on top of other as a real-example. The plate 
 
 ## Operations on Stack
 In order to make manipulations in a stack, there are certain operations provided to us :
-- **push()** : Insert element into stack
+- **push(n)** : Insert element into stack
 - **pop()** : Remove element from stack
-- **peek()** : Return value of top element without removing it
-- **top()** : Returns top element of stack
+- **peek()/top()** : Return value of top element without removing it
 - **isEmpty()** : Return True if stack is empty else false
 - **isFull** : Return True if stack full else otherwise
 - **size()** : Returns size of stack
@@ -30,7 +29,7 @@ Operations are as follows :
 
 We will now check algorithms of basic operations
 
-### peek()
+### peek()/top()
 Return value of top element without removing it.
 Algorithm is as follows :
 ```
@@ -68,8 +67,8 @@ begin procedure isEmpty
 
 end procedure
 ```
-### push()
-Adding new data element onto a stack. Steps include :
+### push(n)
+Adding new data element onto a stack where n is data to be inserted. Steps include :
 1. Check if stack is full
 2. If full, is said to be **overflow** condition.
 3. If stack not full, increment top to point to next empty space.
@@ -133,6 +132,20 @@ Stack can be implemented using two methods ;
 - Using array
 - Using Linked List
 
+### Array Implementation of Stack
+A stack can be implemented using one-dimensional array. Stack implemented using array stores a fixed number of data values i.e static memory allocation where memory is allocated for declared variables by compiler and memory is allocated during compile time. 
+
+The implementation is very simple. Define a one dimensional array of specific size and perform the basic operations in stack with help of variable called `top`.
+
+Steps taken include :
+1. Include all **header files** to be used in program and define `**MAXSIZE**` with specific values
+2. Declare **functions** used in stack implementation.
+3. Create a one-dimensional array with fixed size i.e `**int stack[MAXSIZE]**`
+4. Define integer `top` and initialize with `-1` i.e `top = -1`
+
+
+### Linked List Implementation of Stack
+
 ### Advantages of array implementation
 1. Memory saved as pointers is not used
 2. Easier to implement
@@ -162,4 +175,11 @@ Stack can be implemented using two methods ;
 
 - **Backtracking** - This is a recursive algorithm used for solving optimization problem
 
-- Delimiter or parenthesis checking 
+- Delimiter or parenthesis checking.
+
+- Undoing operation i.e using `ctrl-z`
+
+- Balancing of parenthesis i.e for each opening parenthesis there is proper closing parenthesis
+
+## References
+1. [Stack Data Structure using Array](http://www.btechsmartclass.com/data_structures/stack-using-array.html)
