@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <conio.h>
 
 #define MAX 3
 int stack[MAX];
