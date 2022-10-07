@@ -143,9 +143,6 @@ Steps taken include :
 3. Create a one-dimensional array with fixed size i.e `**int stack[MAXSIZE]**`
 4. Define integer `top` and initialize with `-1` i.e `top = -1`
 
-
-### Linked List Implementation of Stack
-
 ### Advantages of array implementation
 1. Memory saved as pointers is not used
 2. Easier to implement
@@ -153,6 +150,17 @@ Steps taken include :
 ### Disadvantages of array implementation
 1. Not dynamic
 2. Does not shrink or grow depending on needs at runtime.
+
+### Linked List Implementation of Stack
+We have observed that in implementation of stack using an array, we have to specify the size of an array at beginning i.e at compile time and we therefore cannot change the size of array at runtime. To solve this we can implement a stack using a linked list which allocates memory dynamically. Dynamic memory allocation is done at time of execution (at runtime). Fuctions **malloc()** supports dynamic memory allocation.
+
+In Linked List implementation the nodes are maintained non-contigously in memory. Each node contains a pointer to it's immediate successor node in stack. 
+
+Pictorial representation of stack using linked list is as shown below :
+
+
+![Stack Linked List](https://static.javatpoint.com/ds/images/ds-linked-list-implementation-stack.png)
+
 
 ### Advantages of linked list implementation
 1. Can grow or shrink depending on needs at runtime.
