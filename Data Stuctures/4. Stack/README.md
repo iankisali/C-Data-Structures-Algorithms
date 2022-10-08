@@ -189,5 +189,47 @@ Pictorial representation of stack using linked list is as shown below :
 
 - Balancing of parenthesis i.e for each opening parenthesis there is proper closing parenthesis
 
+## Infix, Prefix and Postfix
+Infix, Postfix and Prefix notations are three different but equivalent ways of writing expressions. The concept can easily be understood using examples.
+
+- **Operation :** Any Expression of algebraic format (Example : A + B)
+- **Operands :** A and B or 5 & 6 are operands
+- **Operators :** +. -, %,*,/ etc are operators
+
+### Infix Notation
+This is an expression in which an operator appears between operands in an equation. i.e `<operand> <operator> <operand>`. An example is `A * ( B + C) / D`. This is expressed as "First add B & C in brackets, then multiply A by the sum, them finally divide by D".
+
+This is the rule of precedence and associativity of operators.
+
+Infix notation needs information to make the order of evaluation of operators clear: rules built into language about operator precedence and associativity, and brackets () to allow users to override these rules. Example, rule of associativity says we perform operations from left to right, so in the expression multiplication comes first. Similarly rules of precedence say we perform operations in this order :
+```
+1. () {} []
+2. ^ i.e power
+3. * / multiplication and division
+4. + - addition and subtraction
+```
+### Prefix Notation / Polish Notation
+An expression is called prefix if the operators appears in the expression before operands i.e `<operator> <operand> <operand>` example `/ * A + B C D`.
+
+Although prefix "operators are evaluated left-to-right", they use values to their right and if these values involves computations then it changes order that operators have to be evaluated. In the example, although division is first operator on left, it acts on result of multiplication, therefore multiplication happens before (addition will come before multiplication as well).
+Adding brackets the expression becomes `(/ (* A (+ B C) ) D )`
+Another example :
+```
+Input :  Prefix :  *+AB-CD
+Output : Infix : ((A+B)*(C-D))
+
+Input :  Prefix :  *-A/BC-/AKL
+Output : Infix : ((A-(B/C))*((A/K)-L))
+```
+
+### Postfix Notation / Reverse Polish Notation
+An expression is called postfix if the operators appears in the expression after operands i.e `A B C + * D /`
+
+Order of evaluation is "left to right" and brackets cannot change order. Since `+` is to left of `*` addition is therefore perfomed before multiplication. Operators act on values to left of them example "+" acts on "B" and "C". Simpler version is `((A (B C +) *) D / )`. Thus, the `*` uses the two values immediately preceding: "A", and the result of the addition. Similarly, the `/` uses the result of the multiplication and the "D".
+
+
+
 ## References
 1. [Stack Data Structure using Array](http://www.btechsmartclass.com/data_structures/stack-using-array.html)
+
+2. [Infix, Prefix and Postfix](https://www.cs.man.ac.uk/~pjj/cs212/fix.html)
