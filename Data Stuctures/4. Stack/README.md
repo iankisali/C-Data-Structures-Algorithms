@@ -227,7 +227,27 @@ An expression is called postfix if the operators appears in the expression after
 
 Order of evaluation is "left to right" and brackets cannot change order. Since `+` is to left of `*` addition is therefore perfomed before multiplication. Operators act on values to left of them example "+" acts on "B" and "C". Simpler version is `((A (B C +) *) D / )`. Thus, the `*` uses the two values immediately preceding: "A", and the result of the addition. Similarly, the `/` uses the result of the multiplication and the "D".
 
+## Infix to Postfix 
+Converting an infix notation to postfix is among one application of stack. An expression for example `a + b * (c + d)` can be converted to postfix equivalent `abcd + * +` when an operand appears before an operator. 
 
+The compiler scans the expression either from left to right or from right to left. Consider the expression above. The compiler first scans expression `c + d`, to become `cd +` as one single operand. Scanning from left, compiler will now evaluate `b * (cd +)`(putting in brackets to make it one operand). The expression will be evaluated to become `bcd + *`. Final step after scanning from left the expression becomes `a + (bcd + *)` and the result will be `abcd + * +`. Please note Precedence and Associative rule of operators.
+
+### Steps to convert Infix expression to Postfix expression using Stack:
+- Scan infix from left to right
+- If scanned character is operand, output it.
+- Else,
+    - If precedence and associativity of scanned operator are greater than precedence and associativity of operator in stack(or stack empty or contain `(`) then push it.
+    - `^` operator is right associative and other operators like `+ - * /` are left associative. Check for condition when both ,operator at top of stack and scanned operator are `^`. In this condition, precedence of scanned operator is high hence will be pushed into operator in stack. When top of operator stack is same as scanned operator, then pop operator from stack because of left associativity due to which scanned operator has less precedence.
+      - Else, Pop all the operators from the stack which are greater than or equal to in precedence than that of the scanned operator. After doing that Push the scanned operator to the stack. (If you encounter parenthesis while popping then stop there and push the scanned operator in the stack.) 
+- If scanned char is `(`, push to stack
+- If `)`, pop stack and output till `(` found and discard all parenthesis.
+- Repeat above steps till infix expression scanned and print output
+- Pop and output from stack until not empty
+
+
+This can be implemented using :
+- Linked List implemented in `InfToPostLL.c` file
+- Arrays implemented in `InfToPostArray.c` file.
 
 ## References
 1. [Stack Data Structure using Array](http://www.btechsmartclass.com/data_structures/stack-using-array.html)
