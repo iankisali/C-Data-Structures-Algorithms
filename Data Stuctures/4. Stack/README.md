@@ -249,7 +249,71 @@ This can be implemented using :
 - Linked List implemented in `InfToPostLL.c` file
 - Arrays implemented in `InfToPostArray.c` file.
 
+- **Time Complexity :** O(N), N is size of infix expression
+
+- **Auxiliary Space :** O(N)
+
+## Infix to Prefix
+Converting an infix notation to prefix is among one application of stack. An expression for example `a + b * (c + d)` can be converted to postfix equivalent `+ a * b + cd` where an operator appear before operands.
+
+The compiler will scan the operator from left to right. Considering the expression above the compiler will first evaluate expression `c + d` to become `+ cd` according to order of precedence where brackets is of higher precedence. Next will be `b * (+ cd)` to become `* b + cd` (remember `+ cd` considered as one operand). Lastly, `a + (* b + cd)` evaluated to `+ a * b + cd` which is the prefix equivalent.
+
+### Steps to convert Infix expression to Prefix expression using Stack:
+
+1. Reverse the infix expression and scan expression from left to right.
+
+2. If an operand print out operand
+3. If operator and stack is empty, push the operator to the stack
+4. If the incoming operator has *higher precedence* than top of stack, push the incoming operator into stack
+5. If incoming operator has *same precedence* as that of top of stack, push incoming operator into stack
+6. If incoming operator has lower precedence than top of stack. pop and print top of stack. test incoming operator against top of stack and pop whenever operator finds an operator of lower or same precedence.
+7. If incoming operator has same precedence with top of stackand incoming operator is `^` then pop top of stack till condition is true. If not true push `^`
+8. Pop and print all operators from top of stack when reaching end of expression
+9. If operator is `)` push to stack
+10. If operator is `(` pop all operator till `)` is found
+11. If top of stack is `)` push operator on stack and reverse output
+
+### Pseudocode
+
+```
+Function InfixtoPrefix(stack, infix)
+infix = reverse(infix)
+loop i = 0 to infix.length
+if infix[i] is operand -> prefix += infix[i]
+else if infix[i] is ( -> stack.push(infix[i])
+else if infix[i] is ) -> pop & print stack till ) 
+else if infix[i] is an operator
+
+    if stack isEmpty
+        push.infix[i] on top of stack
+
+    else if precedence(infix[i] > precedence(stack.top)) 
+        push infix[i] on top of stack
+
+    else if (infix[i] == prcedence(stack.top) && infix[i] == ^)
+        pop & print top values till true
+        push infix[i]
+
+    else if (infix[i] == precedence(stack.top))
+        push infix[i] on stack
+
+    else if (infix[i] < precedence(stack.top))
+        pop stack & print till stack not empty &infix[i] < precedence(stack.top)
+
+    push infix[i] onto stack
+    end loop
+pop and print remaining elements
+prefix = reverse(prefix)
+return 
+```
+This can be implemented using :
+- Linked List implemented in `InfToPreLL.c` file
+- Arrays implemented in `InfToPreArray.c` file.
+
+
 ## References
 1. [Stack Data Structure using Array](http://www.btechsmartclass.com/data_structures/stack-using-array.html)
 
 2. [Infix, Prefix and Postfix](https://www.cs.man.ac.uk/~pjj/cs212/fix.html)
+
+3. [Infix to Postfix](https://www.codewithharry.com/videos/data-structures-and-algorithms-in-hindi-37/)
