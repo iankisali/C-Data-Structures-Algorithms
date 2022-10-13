@@ -13,7 +13,7 @@ int top = -1;
 
 void push(char x)
 {
-    if (top >= MAXSIZE)
+    if (top >= MAXSIZE - 1)
     {
         printf("Overflow condition ");
     }
@@ -22,12 +22,12 @@ void push(char x)
         top++;
         stack[top] = x;
         //stack[++top] = x 
-    }
+    }   
 }
 
 char pop()
 {
-    if (top < 0)
+    if (top == -1)
     {
         printf("Underflow condition");
         getchar();
@@ -64,12 +64,13 @@ int precedence(char symbol)
 
 void InfixPostfix(char infix[], char postfix[])
 {
-    int i = 0, j = 0;
+    int i, j;
     char item;
     char x;
     push('(');
     strcat(infix, ")");
-
+    i = 0;
+    j = 0;
     item = infix[i];
 
     while (item != '\0')
