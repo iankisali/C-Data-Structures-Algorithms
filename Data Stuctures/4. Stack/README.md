@@ -310,6 +310,10 @@ This can be implemented using :
 - Linked List implemented in `InfToPreLL.c` file
 - Arrays implemented in `InfToPreArray.c` file.
 
+## Postfix to Infix
+
+## Prefix to Infix
+
 
 ## References
 1. [Stack Data Structure using Array](http://www.btechsmartclass.com/data_structures/stack-using-array.html)
